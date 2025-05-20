@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>API Test Report</title>
+<style>
+  /* Basic CSS for styling */
+  body { font-family: sans-serif; }
+  .summary { border: 1px solid #ccc; padding: 10px; margin-bottom: 20px; }
+  .accordion-outer { border: 1px solid #eee; margin-bottom: 10px; }
+  .accordion-outer-title { background-color: #f0f0f0; padding: 8px; cursor: pointer; }
+  .accordion-inner { border-top: 1px solid #eee; margin-bottom: 5px; }
+  .accordion-inner-title { background-color: #fafafa; padding: 8px; cursor: pointer; }
+  .accordion-content { padding: 10px; display: none; }
+  .pass { color: green; }
+  .fail { color: red; }
+  .assertion-fail { color: red; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h1>API Test Report</h1>
+
+<div class="summary">
+  <strong>Total Tests:</strong> <span id="total">2</span><br>
+  <strong>Passed Tests:</strong> <span id="passed" class="pass">2</span><br>
+  <strong>Failed Tests:</strong> <span id="failed" class="fail">0</span><br>
+  <strong>Environment:</strong> <span id="environment">Development Server</span><br>
+  <strong>Timestamp:</strong> <span id="timestamp">2025-05-11T13:15:00Z</span><br>
+  <strong>Total Execution Time:</strong> <span id="executionTime">2.5s</span><br>
+  <strong>Parallel Requests:</strong> <span id="parallel">1</span>
+</div>
+
+<div class="accordion-outer">
+  <div class="accordion-outer-title">User Management Tests / Create User</div>
+  <div class="accordion-inner">
+    <div class="accordion-inner-title">Create a new user successfully (<span class="pass">Pass</span>)</div>
+    <div class="accordion-content">
+      <strong>Request:</strong><br>
+      URL: <pre>[http://localhost:8080/api/users](http://localhost:8080/api/users)</pre><br>
+      Method: POST<br>
+      Headers: <pre>{ "Content-Type": "application/json" }</pre><br>
+      Body: <pre>{ "username": "testuser", "email": "test@example.com" }</pre><br>
+      <strong>Response:</strong><br>
+      Status Code: 201<br>
+      Headers: <pre>{ "Content-Type": "application/json" }</pre><br>
+      Body: <pre>{ "id": "some_unique_id", "username": "testuser", "email": "test@example.com" }</pre><br>
+      <strong>Assertions:</strong><br>
+      - <span class="pass">Check status code is 201</span><br>
+      - <span class="pass">Verify user ID is present in response</span><br>
+    </div>
+  </div>
+</div>
+
+<div class="accordion-outer">
+  <div class="accordion-outer-title">User Management Tests / Get User Details</div>
+  <div class="accordion-inner">
+    <div class="accordion-inner-title">Get existing user details (<span class="pass">Pass</span>)</div>
+    <div class="accordion-content">
+      <strong>Request:</strong><br>
+      URL: <pre>[http://localhost:8080/api/users/some_unique_id](http://localhost:8080/api/users/some_unique_id)</pre><br>
+      Method: GET<br>
+      Headers: <pre>{ "Authorization": "Bearer dev_token_123" }</pre><br>
+      Body: <pre>null</pre><br>
+      <strong>Response:</strong><br>
+      Status Code: 200<br>
+      Headers: <pre>{ "Content-Type": "application/json" }</pre><br>
+      Body: <pre>{ "id": "some_unique_id", "username": "testuser", "email": "test@example.com" }</pre><br>
+      <strong>Assertions:</strong><br>
+      - <span class="pass">Check status code is 200</span><br>
+      - <span class="pass">Verify username in response</span><br>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Basic JavaScript for accordion functionality
+  var accOuter = document.getElementsByClassName("accordion-outer-title");
+  for (var i = 0; i < accOuter.length; i++) {
+    accOuter[i].addEventListener("click", function() {
+      this.nextElementSibling.classList.toggle("accordion-inner-active");
+    });
+  }
+
+  var accInner = document.getElementsByClassName("accordion-inner-title");
+  for (var i = 0; i < accInner.length; i++) {
+    accInner[i].addEventListener("click", function() {
+      this.nextElementSibling.classList.toggle("accordion-content-active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

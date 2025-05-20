@@ -1,0 +1,20 @@
+{
+    "baseUrl": "https://opcoreautomt-business-api.icertis.com/api",
+    "apiVersion": "v1",
+    "authTokenHeader": "icmauthtoken",
+    "icmAdminToken": "icmAdminToken",
+    "icmAdminEmail": "icmAdminEmail",
+    "icmAdminSysId": "icmAdminSysId",
+    "icmAdminIdentifier": "icmAdminIdentifier",
+    "approver1Email": "approver1Email",
+    "approver1SysId": "approver1SysId",
+    "approver1Identifier": "approver1Identifier",
+    "approver2Email": "approver2Email",
+    "approver2SysId": "approver2SysId",
+    "approver2Identifier": "approver2Identifier",
+    "aeuser20Email": "aeuser20Email",
+    "aeuser20SysId": "aeuser20SysId",
+    "aeuser20Identifier": "aeuser20Identifier",
+    "useExternalIdHeader": "useexternalid",
+    "onbehalfOfHeader": "ici-onbehalfof"
+}
