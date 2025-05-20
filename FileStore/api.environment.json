@@ -1,0 +1,50 @@
+{
+    "name": "apiserver",
+    "variables": [
+        {
+            "name": "API_SERVER_URL",
+            "value": "https://api.example.com",
+            "description": "Base URL for the API server"
+        },
+        {
+            "name": "API_VERSION",
+            "value": "v1",
+            "description": "Version of the API to use"
+        },
+        {
+            "name": "authTokenHeader",
+            "value": "icmauthtoken",
+            "description": "Header for authentication token"
+        },
+        {
+            "name": "externalIdHeader",
+            "value": "useexternalid",
+            "description": "Header for external ID"
+        },
+        {
+            "name": "onbehalfofHeader",
+            "value": "ici-onbehalfof",
+            "description": "Header for 'on behalf of' requests"
+        },
+        {
+            "name": "icmAdminUserEmail",
+            "value": "icmadmin@waadicm.onmicrosoft.com",
+            "description": "Email of the ICM admin user"
+        },
+        {
+            "name": "icmAdminAuthToken",
+            "value": "icmAdminAuthToken",
+            "description": "Authentication token for the ICM admin user"
+        },
+        {
+            "name": "approver1UserEmail",
+            "value": "approver1@waadicm.onmicrosoft.com",
+            "description": "Email of First Approver user"
+        },
+        {
+            "name": "approver1AuthToken",
+            "value": "approver1AuthToken",
+            "description": "Authentication token for the First Approver user"
+        }
+    ]
+}

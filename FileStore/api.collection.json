@@ -1,0 +1,33 @@
+{
+    "name": "Test Scenario Collection",
+    "description": "This is a collection of test scenarios for the API.",
+    "items": [
+        {
+            "name": "Test Scenario 1",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "{{authTokenHeader}} {{icmAdminAuthToken}}"
+                    },
+                    {
+                        "key": "{{externalIdHeader}}",
+                        "value": "{{icmAdminUserEmail}}"
+                    }
+                ],
+                "url": {
+                    "raw": "{{API_SERVER_URL}}/{{API_VERSION}}/test-scenario-1",
+                    "host": [
+                        "{{API_SERVER_URL}}"
+                    ],
+                    "path": [
+                        "{{API_VERSION}}",
+                        "test-scenario-1"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}
